@@ -96,7 +96,7 @@ Two examples are shown in
 
 and 
 
-![Go1 navigation](./doc/e.gif)
+![Go1 navigation2](./doc/e.gif)
 
 ## Details
 The move_base for Unitree go1 is in barn_challenge_lu/params. The base represent the base_link, and the topic scan is /go1_gazebo/scan. The TF tree is shown as 
