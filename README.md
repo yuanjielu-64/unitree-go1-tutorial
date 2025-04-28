@@ -1,9 +1,10 @@
 # Unitree Go1 tutorial
 This repository is based on Unitree's repositories and aims to add the compatibility of the ROS packages with ROS Noetic.
-We will need three repositories:
+We will need four repositories:
 * [unitree_ros](https://github.com/unitreerobotics/unitree_ros)
 * [unitree_legged_sdk](https://github.com/unitreerobotics/unitree_legged_sdk)
 * [unitree_ros_to_real](https://github.com/unitreerobotics/unitree_ros_to_real)
+* [unitree_guide](https://github.com/unitreerobotics/unitree_guide)
 
 If you want to do the simulation, you might only need to use the package unitree_legged_msgs rather than unitree_ros_to_real. Once all the repositories are ready, we can perform low-level control of the robot's movement. In the Gazebo simulation, we cannot do high-level control, namely walking. For real robots, we can do both-level control using ROS packages.
 
@@ -27,8 +28,8 @@ pip3 install defusedxml rospkg netifaces numpy
 
 3. Create ROS workspace
 ```
-mkdir -p /<YOUR_HOME_DIR>/unitree_ws/src
-cd /<YOUR_HOME_DIR>/unitree_ws/src
+mkdir -p /noetic/unitree_ws/src
+cd /noetic/unitree_ws/src
 ```
 
 4. Clone this repo and required ros packages:
@@ -37,20 +38,23 @@ git clone https://github.com/unitreerobotics/unitree_ros.git
 git clone https://github.com/unitreerobotics/unitree_legged_sdk.git
 git clone https://github.com/unitreerobotics/unitree_ros_to_real.git
 git clone https://github.com/unitreerobotics/unitree_guide.git
-
+git clone https://github.com/yuanjielu-64/barn_challenge_go1.git
 ```
+Once you have download barn_challenge_go1, please change name to barn_challenge_lu
 
 5. Use catkin_make to build:
-'''
-cd /<YOUR_HOME_DIR>/unitree_ws/
+```
+cd /noetic/unitree_ws/
 catkin_make
-'''
+```
 
-## Run Simulations for the BARN_challenge
-
-
-
-
+## Run Simulations for BARN challenge
+Open a terminal and start Gazebo
+```
+roslaunch barn_challenge_lu gazebo_launch_test.launch 
+```
+You can change the world name, robot name and the position of the robot
+![Go1 in Rviz](./figure/a.png)
 
 
 
