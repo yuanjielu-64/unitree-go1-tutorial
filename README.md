@@ -53,10 +53,18 @@ Open a terminal and start Gazebo
 ```
 roslaunch barn_challenge_lu gazebo_launch_test.launch 
 ```
-You can change the world name, robot name and the position of the robot
+You can change the world name, robot name and the position (x,y,z, yaw) of the robot in the gazebo_launch_test.launch. In Gazebo, the robot should be lying on the ground with joints not activated. You may find an issue where in many worlds, the initial robot dog cannot properly lie down from a standing position. This is because the joints are not enabled by default. When you add
+```
+<node name="junior_controller" pkg="unitree_guide" type="junior_ctrl" output="screen" />
+```
+in the launch file, or run the following command
+```
+rosrun unitree_guide junior_ctrl
+```
+the problem can be solved.
 ![Go1 in Rviz](./figure/a.png)
 
-
+To launch the 
 
 
 
