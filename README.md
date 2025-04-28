@@ -53,7 +53,7 @@ Open a terminal and start Gazebo
 ```
 roslaunch barn_challenge_lu gazebo_launch_test.launch 
 ```
-You can change the world name, robot name and the position (x,y,z, yaw) of the robot in the gazebo_launch_test.launch. In Gazebo, the robot should be lying on the ground with joints not activated. You may find an issue where in many worlds, the initial robot dog cannot properly lie down from a standing position. This is because the joints are not enabled by default. When you add
+You can change the world name, robot name and the position (x,y,z, yaw) of the robot in launch file. In Gazebo, the robot should be lying on the ground with joints not activated. You may find an issue where in many worlds, the initial robot dog cannot properly lie down from a standing position. This is because the joints are not enabled by default. When you add
 ```
 <node name="junior_controller" pkg="unitree_guide" type="junior_ctrl" output="screen" />
 ```
@@ -61,16 +61,29 @@ in the launch file, or run the following command
 ```
 rosrun unitree_guide junior_ctrl
 ```
-the problem can be solved.
+the problem can be solved. Once the robot is stationary and lying down, we can press the '2' key on the keyboard to switch the robot's finite state machine (FSM) from Passive(initial state) to FixedStand, press the '4' key to switch the FSM from FixedStand to Trotting. After that, you can press the 'W', 'A', 'S', 'D' keys to control the translation of the robot, and press the 'J', 'L' keys to control the rotation of the robot. Press the 'Spacebar', the robot will stop and stand on the ground.
 ![Go1 in Rviz](./figure/a.png)
 
-To launch the 
+The full list of transitions between states available is the following:
+* Key '1': FixedStand/FreeStand to Passive
+* Key '2': Passive/Trotting to FixedStand
+* Key '3': Fixed stand to FreeStand
+* Key '4': FixedStand/FreeStand to Trotting
+* Key '5': FixedStand to MoveBase
+* Key '8': FixedStand to StepTest
+* Key '9': FixedStand to SwingTest
+* Key '0': FixedStand to BalanceTest
 
-
-
-
-
-
+To navigate the robot, we first start the simulation in gazebo
+```
+roslaunch barn_challenge_lu gazebo_launch_test.launch rviz:=false
+```
+It already runs the junior_ctrl, then press the keys '2' and '5' to activate the MoveBase mode.
+Run the following command
+```
+roslaunch barn_challenge_lu navigation.launch
+```
+![Go1 in Rviz2](./figure/b.png)
 
 
 
