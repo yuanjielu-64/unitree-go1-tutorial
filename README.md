@@ -89,7 +89,7 @@ If you want to run the DDP algorithm to unitree go1, cd to scripts/
 ```
 ./build_ddp.sh
 ```
-The previous DDP was configured to use the Hokuyo LiDAR, but the current LiDAR is different, resulting in different reflection data patterns. Previously, the system was designed for the Jackal robot, a differential drive platform, whereas the quadruped robot dog has a different dynamic model. Consequently, the DDP cannot complete all tasks perfectly.
+The previous DDP was configured to use the Hokuyo LiDAR, but the current LiDAR differs, resulting in different reflection data patterns. Previously, the system was designed for the Jackal robot, a differential drive platform, whereas the quadruped robot dog has a different dynamic model. Consequently, the DDP cannot complete all tasks perfectly.
 
 Two examples are shown in
 ![Go1 navigation](./figure/d.gif)
@@ -99,9 +99,9 @@ and
 ![Go1 navigation2](./figure/e.gif)
 
 ## Details
-The move_base for Unitree go1 is in barn_challenge_lu/params. The base represent the base_link, and the topic scan is /go1_gazebo/scan. The TF tree is shown as 
+The move_base for Unitree go1 is in barn_challenge_lu/params. The base represents the base_link, and the topic scan is /go1_gazebo/scan. The TF tree is shown as 
 ![Go1 in Rviz3](./figure/c.png)
-The description of unitree go1 is in unitree_ros/go1_description/urdf/go1.urdf. The radar is installed in urdf, which is different from the official website.
+The description of unitree go1 is in unitree_ros/go1_description/urdf/go1.urdf. The radar is installed in urdf, which differs from the official website.
 
 ## Contact
 For any questions or support, please contact:
