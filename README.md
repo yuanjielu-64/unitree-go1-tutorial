@@ -92,6 +92,7 @@ If you want to run the DDP algorithm to unitree go1, cd to scripts/
 The previous DDP was configured to use the Hokuyo LiDAR, but the current LiDAR differs, resulting in different reflection data patterns. Previously, the system was designed for the Jackal robot, a differential drive platform, whereas the quadruped robot dog has a different dynamic model. Consequently, the DDP cannot complete all tasks perfectly.
 
 Two examples are shown in
+
 ![Go1 navigation](./figure/d.gif)
 
 and 
